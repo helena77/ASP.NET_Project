@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMvc", "MovieMvc\MovieMvc.csproj", "{337D4AB6-473B-4268-9F32-0518E1195E33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMvcTest", "MovieMvcTest\MovieMvcTest.csproj", "{618D7329-8942-45E8-B65B-72A74D05D0B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{337D4AB6-473B-4268-9F32-0518E1195E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{337D4AB6-473B-4268-9F32-0518E1195E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{337D4AB6-473B-4268-9F32-0518E1195E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618D7329-8942-45E8-B65B-72A74D05D0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618D7329-8942-45E8-B65B-72A74D05D0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618D7329-8942-45E8-B65B-72A74D05D0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618D7329-8942-45E8-B65B-72A74D05D0B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
