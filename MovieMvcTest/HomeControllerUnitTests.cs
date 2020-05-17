@@ -51,12 +51,14 @@ namespace MovieMvcTest
             homeController.ControllerContext = new ControllerContext();
             homeController.ControllerContext.HttpContext = new DefaultHttpContext();
             homeController.ControllerContext.HttpContext.Request.Headers["device-id"] = "1";
+            //var errorModel = new ErrorViewModel();
 
             // Act
             var result = homeController.Error();
 
             // Assert
-            Assert.IsType<ViewResult>(result);
+            var viewResult = Assert.IsType<ViewResult>(result);
+            Assert.IsAssignableFrom<ErrorViewModel>(viewResult.ViewData.Model);
         }
     }
 }
