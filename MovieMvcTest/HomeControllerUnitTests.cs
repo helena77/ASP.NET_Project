@@ -42,5 +42,21 @@ namespace MovieMvcTest
             Assert.IsType<ViewResult>(result);
 
         }
+
+        [Fact]
+        public void Error_ActionExecutes_RetrunsAViewResult()
+        {
+            // Arrange
+            var homeController = new HomeController(_logger);
+            homeController.ControllerContext = new ControllerContext();
+            homeController.ControllerContext.HttpContext = new DefaultHttpContext();
+            homeController.ControllerContext.HttpContext.Request.Headers["device-id"] = "1";
+
+            // Act
+            var result = homeController.Error();
+
+            // Assert
+            Assert.IsType<ViewResult>(result);
+        }
     }
 }
