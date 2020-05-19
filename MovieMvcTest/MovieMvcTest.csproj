@@ -19,6 +19,7 @@
     <PackageReference Include="Selenium.Chrome.WebDriver" Version="81.0.0" />
     <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
     <PackageReference Include="Moq" Version="4.14.1" />
+    <PackageReference Include="Typemock.Isolator" Version="8.9.2" />
   </ItemGroup>
 
   <ItemGroup>

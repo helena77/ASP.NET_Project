@@ -14,7 +14,22 @@ namespace MovieMvcTest
 {
     public class MoviesControllerUnitTests
     {
-     
-       
+
+        [Fact]
+        public async Task Index_ActionExecutes_ReturnsAViewResult()
+        {
+            // Arrange
+
+            var mock = new Mock<MvcMovieContext>();
+            //mock.Setup(m => m.Movie = list).Returns(list);
+
+            MoviesController controller = new MoviesController(mock.Object);
+
+            // Act
+            var result = await controller.Index() as Task<ViewResult>;
+
+            // Assert
+            Assert.IsType<ViewResult>(result);
+        }
     }
 }
