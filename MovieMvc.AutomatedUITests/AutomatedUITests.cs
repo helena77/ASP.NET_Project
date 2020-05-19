@@ -37,18 +37,6 @@ namespace MovieMvc.AutomatedUITests
             _driver.FindElement(By.LinkText("Images")).Click();
 
             Assert.Equal("Bing Image Trending", _driver.Title);
-            
-
-            //userIdInputElement.SendKeys("mylogin@gmail.com");
-            //passwordInputElement.SendKeys("myPassword");
-
-            //loginButton.Click();
-
-            //var logoutLink = loginWait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Log out")));
-            //logoutLink.Click();
-
-            //_webDriver.Quit();
-
         }
 
 
