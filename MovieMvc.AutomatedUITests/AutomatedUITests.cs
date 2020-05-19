@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using Xunit;
 
 namespace MovieMvc.AutomatedUITests
@@ -27,5 +28,29 @@ namespace MovieMvc.AutomatedUITests
 
             Assert.Equal("Bing", _driver.Title);
         }
+
+        [Fact]
+        public void Bing_WhenClickImage_ReturnImageView()
+        {
+            //var CreateWait = new WebDriverWait(_driver, System.TimeSpan.FromSeconds(5));
+            _driver.Navigate().GoToUrl("https://www.bing.com/");
+            _driver.FindElement(By.LinkText("Images")).Click();
+
+            Assert.Equal("Bing Image Trending", _driver.Title);
+            
+
+            //userIdInputElement.SendKeys("mylogin@gmail.com");
+            //passwordInputElement.SendKeys("myPassword");
+
+            //loginButton.Click();
+
+            //var logoutLink = loginWait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Log out")));
+            //logoutLink.Click();
+
+            //_webDriver.Quit();
+
+        }
+
+
     }
 }
