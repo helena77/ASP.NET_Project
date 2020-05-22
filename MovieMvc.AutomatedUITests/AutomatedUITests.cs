@@ -1,8 +1,10 @@
 using System;
 using System.IO;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using Xunit;
 
 namespace MovieMvc.AutomatedUITests
@@ -13,6 +15,7 @@ namespace MovieMvc.AutomatedUITests
         public AutomatedUITests()
         {
             _driver = new ChromeDriver(Directory.GetCurrentDirectory());
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
         public void Dispose()
@@ -39,6 +42,15 @@ namespace MovieMvc.AutomatedUITests
             Assert.Equal("Bing Image Trending", _driver.Title);
         }
 
+        [Fact]
+        public void Bing_WhenSearchTopic_ReturnsTopicPageView()
+        {
+            _driver.Navigate().GoToUrl("https://www.bing.com/");
+            var input = _driver.FindElement(By.Id("sb_form_q"));
+            input.SendKeys("seattle");
+            input.SendKeys(Keys.Enter);
 
+            Assert.Equal("seattle - Bing", _driver.Title);
+        }
     }
 }
